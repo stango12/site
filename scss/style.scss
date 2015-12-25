@@ -1,0 +1,72 @@
+@import "compass/css3";
+
+* {
+  @include box-sizing(border-box); 
+}
+
+section {
+  background: #eee;
+  padding: 40vh 10%;
+  overflow: hidden;
+  p {
+    color: rgba(0,0,0,.5) !important;
+    font-weight: 100;
+    font-size: 36pt;
+  }
+  &.one {
+    background-color:#FFE62B;
+  }
+  &.two {
+    background-color:#FFCF00;
+  }
+  &.three {
+    background-color:#FFB700;
+  }
+  &.four {
+    background-color:#FF9E00;
+  }
+  &.five {
+    background-color:#FF7A00;
+  }
+}
+
+.module {
+  position: relative;
+  float: left;
+  margin: 5%;
+  opacity: 0;
+  &:nth-child(even) {
+    margin-right: 0;
+  }
+}
+
+.come-in {
+  transform: translateX(-150px);
+  animation: come-in 0.5s cubic-bezier(0,-0.01,0,.99) forwards;
+}
+.come-in:nth-child(odd) {
+  animation-delay: .1s;
+  animation-duration: .75s;
+}
+.leave {
+  transform: translateX(150px);
+  animation: leave 0.5s cubic-bezier(0,-0.01,0,.99) forwards;
+}
+.leave:nth-child(odd) {
+  animation-delay: .1s;
+  animation-duration: .75s;
+}
+
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+  opacity: 1;
+}
+
+@keyframes come-in {
+  to { transform: translateX(0); opacity: 1;}
+}
+
+@keyframes leave {
+  to { transform: translateX(-150); opacity: 0;}
+}

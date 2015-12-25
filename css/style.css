@@ -1,0 +1,80 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+section {
+  background: #eee;
+  padding: 40vh 10%;
+  overflow: hidden;
+}
+section p {
+  color: rgba(0, 0, 0, 0.5) !important;
+  font-weight: 100;
+  font-size: 36pt;
+}
+section.one {
+  background-color: #FFE62B;
+}
+section.two {
+  background-color: #FFCF00;
+}
+section.three {
+  background-color: #FFB700;
+}
+section.four {
+  background-color: #FF9E00;
+}
+section.five {
+  background-color: #FF7A00;
+}
+
+.module {
+  position: relative;
+  float: left;
+  margin: 5%;
+  opacity: 0;
+}
+.module:nth-child(even) {
+  margin-right: 0;
+}
+
+.come-in {
+  transform: translateX(-150px);
+  animation: come-in 0.5s cubic-bezier(0, -0.01, 0, 0.99) forwards;
+}
+
+.come-in:nth-child(odd) {
+  animation-delay: .1s;
+  animation-duration: .75s;
+}
+
+.leave {
+  transform: translateX(150px);
+  animation: leave 0.5s cubic-bezier(0, -0.01, 0, 0.99) forwards;
+}
+
+.leave:nth-child(odd) {
+  animation-delay: .1s;
+  animation-duration: .75s;
+}
+
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+  opacity: 1;
+}
+
+@keyframes come-in {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes leave {
+  to {
+    transform: translateX(-150);
+    opacity: 0;
+  }
+}
